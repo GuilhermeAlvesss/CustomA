@@ -1,0 +1,16 @@
+{
+  "name": "jb-activity",
+  "version": "0.0.1",
+  "engines": {
+    "node": "10.x"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.16.4",
+    "node-fetch": "^2.6.7",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
