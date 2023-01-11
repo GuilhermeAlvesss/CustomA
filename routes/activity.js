@@ -3,7 +3,7 @@ const token = require('../public/js/getToken');
 const Path = require('path');
 const { waitForDebugger } = require('inspector');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-const JWTSecret = "uNEngBCkdDH6IWq-IjTlp6sZHOVqGntXeaEwTcxFX6fSVkW1gXJQsqrM4mn5KHEPT06YyjQvXJMCQAuYQBWzGmDc1NtzjIv4SzAMMyH4CUIS15OjIGi9df2Ogi4RftVAf_XYZv3SAF-BINsya7GVWpcHOMggFf4ke3PuPYHZ8hlTI6uUjJZ-Klfxb5gtKjm0NqW0kGayz2yt55j6BKv9X-G7kl0rJ2MU5d2wNDAH-TWDkr6LYgq8wVMdFevb8A2";
+//const JWTSecret = "uNEngBCkdDH6IWq-IjTlp6sZHOVqGntXeaEwTcxFX6fSVkW1gXJQsqrM4mn5KHEPT06YyjQvXJMCQAuYQBWzGmDc1NtzjIv4SzAMMyH4CUIS15OjIGi9df2Ogi4RftVAf_XYZv3SAF-BINsya7GVWpcHOMggFf4ke3PuPYHZ8hlTI6uUjJZ-Klfxb5gtKjm0NqW0kGayz2yt55j6BKv9X-G7kl0rJ2MU5d2wNDAH-TWDkr6LYgq8wVMdFevb8A2";
 //const util = require('util');
 //const axios = require('axios');
 
@@ -98,7 +98,7 @@ exports.save = function (req, res) {
 //execute é a rota de execução da jornada, depois que a jornada for salva ela entrará na rota execute
 exports.execute = function (req, res) {
     console.log('Executando a chamada do Execute');
-    JWT(req.body, JWTSecret, (err, decoded) => {
+    JWT(req.body, process.env.jwtSecret, (err, decoded) => {
 
         console.log('LINHA 72 => decoded: ', decoded);
 
