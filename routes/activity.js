@@ -25,13 +25,6 @@ gettoken();
 
 async function sendDataExtension(FirstName, parameters) {
 
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "Bearer " + tokenAPI.access_token);
-    console.log('token.access_token => LINHA 26 ' + tokenAPI.access_token);
-    myHeaders.append("Content-Type", "application/json");
-
-
-
     var data = JSON.stringify([
         {
             "keys": {
