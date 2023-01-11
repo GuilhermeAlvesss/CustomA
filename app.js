@@ -10,7 +10,7 @@ var activity = require('./routes/activity');
 
 var app = express();
 
-app.set(process.env.PORT || 3000 );
+app.set(process.env.PORT || 8080 );
 //app.use(bodyParser.json());
 app.use(bodyParser.raw({ type: 'application/jwt' }));
 //app.use(bodyParser.urlencoded({ extended: true }));
