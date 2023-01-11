@@ -1,5 +1,5 @@
 'use strict';
-const token = require('../public/js/getToken');
+// const token = require('../public/js/getToken');
 const Path = require('path');
 const { waitForDebugger } = require('inspector');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
@@ -11,14 +11,7 @@ const axios = require('axios');
 //A função inicial gettoken, será a função que fará a chamada do arquivo getToken, onde retornará o Access Token que precisamos para fazer a requisição para a API,
 
 
-var tokenAPI;
-
-async function gettoken() {
-    tokenAPI = await token();
-    console.log('ACTIVITY.js TOKEN API LINHA 13 => ', tokenAPI.access_token);
-    return tokenAPI;
-};
-gettoken();
+// s
 
 
 //Função sendDataExtension, será a função que irá enviar a requisição para a API
@@ -50,7 +43,7 @@ async function sendDataExtension(FirstName, parameters) {
         url: "https://mcb9kl4d8mmhtzrqdqw1vjhdlrz4.rest.marketingcloudapis.com/hub/v1/dataevents/key:55AA36EF-C676-4B1C-9388-8FD052D9BCB0/rowset",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + tokenAPI.access_token
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiIyOHFzRndUNDVSNWxHem95eUY3NW9nME8iLCJjbGllbnRfaWQiOiJ1bDhhaTh2MjRoa3doZXV3bXN4c3d6ZnkiLCJlaWQiOjUyNjAwMDk0NCwic3RhY2tfa2V5IjoiUzEyIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciIsInBpZCI6MzQ4fQ.qN7FQhuRb6wtce5M81qFc7_-wcxHQTHzs1J8WwO90Fs.GDVr311c4leEJjJTDHXsTLH17t3xTjCv7eYwy0h_5RQ5p5Os6gNQTFPPaKYzxsp9tF47F277wsoFvPJ2KxYOBUEeGmXiQGGupKKJIeaJeyYbsxfqQ86lPeTJpi4Q2iE8wGJlFaxlm3P8jXLMcaDke0HLW3f-JMFyeNyBG'
         },
         data: data
     };
