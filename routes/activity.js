@@ -61,7 +61,7 @@ async function sendDataExtension(FirstName, parameters) {
             if (response.status != 200) {
                 console.log('<== ENTRO NO IF LINHA 53  ==>');
 
-                var responseJSON = response.json;
+                var responseJSON = response;
                 console.log('<== RESPONSE STATUS ==> ' + responseJSON.status);
                 gettoken();
                 sleep(500);

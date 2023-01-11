@@ -19,7 +19,7 @@ var data = JSON.stringify({
 
   var token = async function requestToken(){ 
     const response = await axios(config);
-    const jsonData = await response.json();
+    const jsonData = await response;
     console.log('Estou na linha 21 do get token retornando o jsonData', jsonData);
     console.log('Este é o meu jsonData.access_token => ', jsonData.access_token);
     return jsonData;
