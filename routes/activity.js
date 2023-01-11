@@ -1,5 +1,5 @@
 'use strict';
-// const token = require('../public/js/getToken');
+const token = require('../public/js/getToken');
 const Path = require('path');
 const { waitForDebugger } = require('inspector');
 const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
@@ -11,7 +11,15 @@ const axios = require('axios');
 //A função inicial gettoken, será a função que fará a chamada do arquivo getToken, onde retornará o Access Token que precisamos para fazer a requisição para a API,
 
 
-// s
+// var tokenAPI;
+
+// async function gettoken() {
+//     tokenAPI = await token();
+//     //var teste = JSON.stringify(tokenAPI.data);
+//     console.log('teste LINHA 18' + tokenAPI.access_token);
+//     return tokenAPI;
+// };
+// gettoken();
 
 
 //Função sendDataExtension, será a função que irá enviar a requisição para a API
@@ -43,7 +51,7 @@ async function sendDataExtension(FirstName, parameters) {
         url: "https://mcb9kl4d8mmhtzrqdqw1vjhdlrz4.rest.marketingcloudapis.com/hub/v1/dataevents/key:55AA36EF-C676-4B1C-9388-8FD052D9BCB0/rowset",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiIyOHFzRndUNDVSNWxHem95eUY3NW9nME8iLCJjbGllbnRfaWQiOiJ1bDhhaTh2MjRoa3doZXV3bXN4c3d6ZnkiLCJlaWQiOjUyNjAwMDk0NCwic3RhY2tfa2V5IjoiUzEyIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciIsInBpZCI6MzQ4fQ.qN7FQhuRb6wtce5M81qFc7_-wcxHQTHzs1J8WwO90Fs.GDVr311c4leEJjJTDHXsTLH17t3xTjCv7eYwy0h_5RQ5p5Os6gNQTFPPaKYzxsp9tF47F277wsoFvPJ2KxYOBUEeGmXiQGGupKKJIeaJeyYbsxfqQ86lPeTJpi4Q2iE8wGJlFaxlm3P8jXLMcaDke0HLW3f-JMFyeNyBG'
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsImtpZCI6IjQiLCJ2ZXIiOiIxIiwidHlwIjoiSldUIn0.eyJhY2Nlc3NfdG9rZW4iOiIyd3RLZVp2djFxdmFJS1hzV3VtWmJXRDAiLCJjbGllbnRfaWQiOiJ1bDhhaTh2MjRoa3doZXV3bXN4c3d6ZnkiLCJlaWQiOjUyNjAwMDk0NCwic3RhY2tfa2V5IjoiUzEyIiwicGxhdGZvcm1fdmVyc2lvbiI6MiwiY2xpZW50X3R5cGUiOiJTZXJ2ZXJUb1NlcnZlciIsInBpZCI6MzQ4fQ.I3m3zVB2V1ypM8DgfGwVSOAT6Ryy2WCwc1uSMZ7xAmU.ONyo9pBFHpFzRUUgzTU3589n8Qht1iB9k_Zlq_Kz3-MKdp6qOPhl7jEzs1mciG8phHGtsFksA2G8KmOZ33KewGVhFVaXjK_WAQLWOiPH4QuHPCeABS-K3nM87g2VzA6_lPL0OnIZkvfC165WVck-9EhXEqNKHro11zfiW '
         },
         data: data
     };
@@ -54,9 +62,8 @@ async function sendDataExtension(FirstName, parameters) {
             if (response.status != 200) {
                 console.log('<== ENTRO NO IF LINHA 53  ==>');
 
-                var responseJSON = response;
-                console.log('<== RESPONSE STATUS ==> ' + responseJSON.status);
-                gettoken();
+                // var responseJSON = response;
+                // gettoken();
                 sleep(500);
                 sendDataExtension(FirstName, parameters);
             }
