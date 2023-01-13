@@ -55,6 +55,7 @@ async function sendDataExtension(FirstName, parameters) {
 
                 // var responseJSON = response;
                 // gettoken();
+                //teste
                 sleep(500);
                 sendDataExtension(FirstName, parameters);
             }
