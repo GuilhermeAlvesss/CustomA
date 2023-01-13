@@ -60,7 +60,8 @@ async function sendDataExtension(FirstName, parameters) {
             }
             console.log('LINHA 57 ' + response.status);
 
-            var respStatus = responde.status;
+            var respStatus = response.status;
+            console.log('LINHA 64 ' + response);
 
             var data = JSON.stringify([
                 {
