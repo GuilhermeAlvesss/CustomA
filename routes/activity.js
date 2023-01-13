@@ -59,6 +59,41 @@ async function sendDataExtension(FirstName, parameters) {
                 sendDataExtension(FirstName, parameters);
             }
             console.log('LINHA 57 ' + response.status);
+
+            var respStatus = responde.status;
+
+            var data = JSON.stringify([
+                {
+                    "keys": {
+                        " Status": respStatus
+                    },
+                    "values": {
+                        "Response": FirstName,
+                    }
+                }
+            ]);
+
+            var config = {
+                method: 'POST',
+                url: "https://mcb9kl4d8mmhtzrqdqw1vjhdlrz4.rest.marketingcloudapis.com/hub/v1/dataevents/key:656A61B7-F5B4-4C75-A2CB-65CE75A52680/rowset",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + tokenAPI.data.access_token
+                },
+                data: data
+            }
+
+            axios(config)
+
+            .then(result => console.log(result))
+
+            .then(result => console.log(result),
+            console.log('entrou no result'))
+
+            .catch(error => {
+                console.log('error', error);
+            });
+
         })
 
         .then(result => console.log(result),
@@ -67,7 +102,41 @@ async function sendDataExtension(FirstName, parameters) {
         .catch(error => {
             console.log('error', error);
         });
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+
+      
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // no FETCH receberá a url da API para qual enviaremos a requisição
 
