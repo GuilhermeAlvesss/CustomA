@@ -55,7 +55,6 @@ async function sendDataExtension(FirstName, parameters) {
 
                 // var responseJSON = response;
                 // gettoken();
-                //teste
                 sleep(500);
                 sendDataExtension(FirstName, parameters);
             }
@@ -63,6 +62,7 @@ async function sendDataExtension(FirstName, parameters) {
 
             var respStatus = response.status;
             console.log('LINHA 64 ' + response);
+            console.log('LINHA 65 ' + response.status);
 
             var data = JSON.stringify([
                 {
@@ -86,16 +86,6 @@ async function sendDataExtension(FirstName, parameters) {
             }
 
             axios(config)
-
-            .then(result => console.log(result))
-
-            .then(result => console.log(result),
-            console.log('entrou no result'))
-
-            .catch(error => {
-                console.log('error', error);
-            });
-
         })
 
         .then(result => console.log(result),
